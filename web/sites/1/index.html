@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html  lang="ru" >
+<head>
+    <meta charset="UTF-8">
+    <title >Задание 1 by 27/1 </title>
+    <link  rel="icon" href="pic/shrek.jpg" />
+</head>
+<body>
+
+<h1 id="page_top"><strong>Задание 1 </strong></h1>
+<ul>
+    <li><a href="http://kubsu.ru"> КубГУ(абсолютная гиперссылка)</a></li>
+    <li><a href="https://kubsu.ru"> КубГУ(гиперссылка с протоколом https)</a></li>
+    <li><a href="https://kubsu.ru">
+        <img src="pic/image.jpg" alt="Картинка" width="100" height="100"/> </a></li>
+    <li><a href="vnutri.html"> Сокращенная ссылка на внутреннюю страницу </a></li>
+    <li><a href="index.html">Сокращенная ссылка на главную страницу </a></li>
+    <li><a href="#page_top">Ссылка на фрагмент текущей страницы </a></li>
+    <li><a href="index.html?p1=1&p2=2&p3=3" id="id_test" title="Пример">Ссылка с 3 параметрами в url  </a></li>
+    <li><a href="index.html">Ссылка с параметром id в URL</a></li>
+    <li><a href="vnutri.html"> Ссылка на страницу в текущем каталоге </a></li>
+    <li><a href="about/about.html"> Ссылка на страницу в каталоге about </a></li>
+    <li><a href="../upper.html"> Ссылка на страницу в каталоге уровнем выше</a></li>
+    <li><a href="../../upper2.html"> Ссылка на страницу в каталоге 2 уровнями выше</a></li>
+    <li>Текс текст текст <a href ="index.html"> текст</a> текст текст текст текст</li>
+    <li><a href = "https://ru.wikipedia.org/wiki/Гиперссылка#Гиперссылка_на_другую_HTML-страницу">Ссылка на фрагмент страницы строннего сайта</a> </li>
+     <li>
+            <map name="map">
+                <area shape="rect" coords="364,163,423,674" href="https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D1%8F%D0%BC%D0%BE%D1%83%D0%B3%D0%BE%D0%BB%D1%8C%D0%BD%D0%B8%D0%BA" alt="Прямоугольник">
+                <area shape="circle" coords="528,183, 80" href="https://ru.wikipedia.org/wiki/%D0%9A%D1%80%D1%83%D0%B3" alt="Круг">
+            </map>
+            <img usemap="#map" src="pic/map.jpg" alt="Картинка">
+        </li>
+    <li><a href=> Ссылка с пустым href</a></li>
+    <li><a> Ссылка без href</a></li>
+     <li><a href="index.html" rel="nofollow">Ссылка, по которой запрещен переход поисковикам</a></li>
+    <li><a href="index.html" rel="noindex">Ссылка, запрещенная для индексации поисковиками</a></li>
+    <li><ol>
+            <li><a href="" title="Подпись">Ссылка с подписью</a></li>
+            <li><a href="" title="Другая подпись">Ссылка с другой подписью</a></li>
+        </ol></li>
+    <li><a href="ftp://username:password@ftp.example.com/document.txt">Ссылка на файл на сервере FTP с авторизацией</a></li>
+     <form action="test@example.com">
+        <label>ФИО: <input type="text"><br></label>
+        <label>Телефон: <input type="tel"><br></label>
+        <label>E-mail: <input type="email"><br></label>
+        <label>Дата рождения: <input type="date"><br></label>
+
+        <label>Пол:</label>
+        <label><input type="radio" name="gender">М</label>
+        <label><input type="radio" name="gender">Ж<br></label>
+
+        <label>
+            Любимый язык программирования:
+            <select name="fav-lang">
+                <option value="">Pascla</option>
+                <option value="">C</option>
+                <option value="">C++</option>
+                <option value="">JavaScript</option>
+                <option value="">PHP</option>
+                <option value="">Python</option>
+                <option value="">Java</option>
+                <option value="">Haskel</option>
+                <option value="">Clojure</option>
+                <option value="">Prolog</option>
+                <option value="">Scala</option>
+            </select><br>
+        </label>
+
+        <label>
+            Биография:<br>
+            <textarea name="bio" style="height: 200px;width: 300px"></textarea><br>
+        </label>
+
+        <label><input type="checkbox">С контрактом ознакомлен(а)</label><br>
+        <input type="submit" value="Сохранить">
+    </form>
+</ul>
+
+</body>
+</html>
