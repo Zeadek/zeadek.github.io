@@ -70,13 +70,13 @@ header p{
 #menu_hov:hover + #menu
 {
     transform: translateX(0px) ;
-    transition: transform 100ms;
+    transition: transform 300ms;
 }
 
 #menu:hover
 {
     transform: translateX(0px) ;
-    transition: transform 100ms;
+    transition: transform 300ms;
 }
 
 #menu a
@@ -89,14 +89,14 @@ header p{
 {
     position: absolute;
     transform: translateX(150px);
-    transition: transform 200ms;
+    transition: transform 500ms;
     overflow-x: hidden;
     width: 130px;
     height: 50px;
     align-content: center;
     right: 0;
     top: 35px;
-      -webkit-transition-delay: 200ms;
+      -webkit-transition-delay: 300ms;
 }
 
 .content
