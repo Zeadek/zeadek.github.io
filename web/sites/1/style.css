@@ -1,0 +1,83 @@
+*
+{
+    box-sizing: border-box;
+    font-family: "Comic Sans MS";
+    padding: 0;
+    margin: 0;
+}
+
+.color1 {color: #051619;}
+.color2 {color: #292e46;}
+.color3 {color: #73728a;}
+.color4 {color: #c2b5d0;}
+.color5 {color: #e7dae7;}
+
+header{
+    background-color: #051619;
+}
+
+tr:nth-child(odd)
+{
+    background-color: grey;
+    color: black;
+}
+
+footer
+{
+    height: 100px;
+    width: 100%;
+    background-color: black;
+}
+
+#low-logo
+{
+    float:left;
+    width: 100px;
+    height: 100px;
+}
+
+footer #low-logo:hover+#bywho
+{
+    display: inline-block;
+    animation: rotation 6s infinite linear;
+}
+    @keyframes rotation {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+
+#bywho
+{
+    display: none;
+    font-size:18px;
+    padding: 40px 0 0 0;
+    color: darkorange;
+
+}
+
+#Form{
+
+ }
+#tabl{
+
+}
+#silki{
+
+}
+
+@media (min-width: 769px ) {
+    #Form{
+        order: 3;
+    }
+    #tabl{
+        order: 2;
+    }
+    #silki{
+        order: 1;
+    }
+}
