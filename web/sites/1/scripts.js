@@ -2,6 +2,10 @@ document.querySelector("form").addEventListener("submit", (e) => {e.preventDefau
         alert("Попытайтесь позже. Данные некуда отправлять");
     })
 
+  function calc(price,item){
+
+  }
+
   function setCursorPosition(pos, e) {
     e.focus();
     if (e.setSelectionRange) e.setSelectionRange(pos, pos);
@@ -48,7 +52,8 @@ $(document).ready(function() {
       }
     }
   });
-
 });
 
-
+ $(document).ready(function() {
+      $('#lang').select2();
+    });
