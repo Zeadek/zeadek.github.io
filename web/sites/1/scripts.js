@@ -1,22 +1,76 @@
 document.addEventListener('DOMContentLoaded', function() {
-  const quantityInput = document.getElementById('quantity');
-  const productSelect = document.getElementById('product');
-  const calculateButton = document.getElementById('calculate');
-  const resultParagraph = document.getElementById('result');
+      const quantityInput = document.getElementById('quantity');
+      const serviceTypeRadios = document.querySelectorAll('input[name="serviceType"]');
+      const productOptionsSelect = document.getElementById('productOption');
+      const productPropertyCheck = document.getElementById('productPropertyCheck');
+      const resultParagraph = document.getElementById('result');
 
-  calculateButton.addEventListener('click', () => {
-    const quantity = parseInt(quantityInput.value);
-    const price = parseInt(productSelect.value);
+      const productOptionsContainer = document.getElementById('productOptions');
+      const productPropertyContainer = document.getElementById('productProperty');
 
-    if (quantity <= 0 || isNaN(quantity)) {
-      resultParagraph.textContent = 'Некорректное количество товара!';
-      return;
-    }
+      function calculateTotalCost() {
+        const quantity = parseInt(quantityInput.value);
+        let basePrice = 0;
+        let optionPrice = 0;
+        let propertyPrice = 0;
 
-    const totalCost = quantity * price;
-    resultParagraph.textContent = `Стоимость заказа: ${totalCost.toFixed(2)} руб.`;
-  });
-});
+        for (const radio of serviceTypeRadios) {
+          if (radio.checked) {
+            basePrice = parseInt(radio.value);
+          }
+        }
+
+        if (productOptionsSelect) {
+          optionPrice = parseInt(productOptionsSelect.value);
+        }
+
+        if (productPropertyCheck) {
+          propertyPrice = productPropertyCheck.checked ? parseInt(productPropertyCheck.value) : 0;
+        }
+
+        const totalCost = (basePrice + optionPrice) * quantity + propertyPrice;
+        resultParagraph.textContent = `Стоимость заказа: ${totalCost.toFixed(2)} руб.`;
+      }
+
+      function updateForm() {
+        for (const radio of serviceTypeRadios) {
+          if (radio.checked) {
+            const serviceType = parseInt(radio.value);
+            switch (serviceType) {
+              case 100:
+                productOptionsContainer.style.display = 'none';
+                productPropertyContainer.style.display = 'none';
+                break;
+              case 150:
+                productOptionsContainer.style.display = 'block';
+                productPropertyContainer.style.display = 'none';
+                break;
+              case 200:
+                productOptionsContainer.style.display = 'none';
+                productPropertyContainer.style.display = 'block';
+                break;
+                case 250:
+                productOptionsContainer.style.display = 'block';
+                productPropertyContainer.style.display = 'block';
+                break;
+            }
+          }
+        }
+        calculateTotalCost(); // Пересчет при изменении типа услуги
+      }
+
+      // При загрузке страницы и изменении типа услуги
+      updateForm();
+
+      // При изменении количества, опции или свойства
+      quantityInput.addEventListener('input', calculateTotalCost);
+      productOptionsSelect.addEventListener('change', calculateTotalCost);
+      productPropertyCheck.addEventListener('change', calculateTotalCost);
+
+      for (const radio of serviceTypeRadios) {
+        radio.addEventListener('change', updateForm);
+      }
+    });
 
 document.querySelector("form").addEventListener("submit", (e) => {
   e.preventDefault();
@@ -71,3 +125,4 @@ $(document).ready(function () {
     }
   });
 });
+
