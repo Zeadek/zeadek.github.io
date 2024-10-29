@@ -1,3 +1,50 @@
+const swiper = new Swiper('.image-slider', {
+
+  loop: true,
+  spaceBetween:30,
+  simulateTouch: false,
+  autoHeight: true,
+  centeredSlides: true,
+  slideToClickedSlide: true,
+  freeMode: true,
+
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+    dynamicBullets:true,
+    renderBullet: function (index, className) {
+      return '<span class="' + className + '">' + (index+1) + '</span>>';
+    }
+  },
+
+  keyboard:{
+    enabled:true,
+    onlyInViewport: true,
+    pageUpDown: true,
+  },
+
+  mousewheel:{
+    sensitivity:1,
+  },
+
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  breakpoints: {
+    0:{
+      slidesPerView: 1
+    },
+     768:{
+      slidesPerView: 2
+    },
+     1024:{
+      slidesPerView: 3
+    },
+  }
+});
+
 document.addEventListener('DOMContentLoaded', function() {
       const quantityInput = document.getElementById('quantity');
       const serviceTypeRadios = document.querySelectorAll('input[name="serviceType"]');
